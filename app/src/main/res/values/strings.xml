@@ -4,4 +4,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map_out_the_rust_we_make_it_easy">Map out the rust, We make it easy</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="image_result">Image Result</string>
+    <string name="get_result">Get Result</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="preview_of_uploaded_image">Preview of Uploaded Image</string>
+    <string name="result_image">Result Image</string>
+    <string name="banner_image">Banner Image</string>
 </resources>

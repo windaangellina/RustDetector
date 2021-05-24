@@ -75,7 +75,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp"
                     android:layout_marginEnd="15dp"
-                    app:layout_collapseMode="parallax"/>
+                    app:layout_collapseMode="parallax"
+                    android:contentDescription="@string/banner_image" />
 
             </LinearLayout>
 
@@ -97,7 +98,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
-            android:id="@+id/layoutListUser"
+            android:id="@+id/layoutImage"
             android:elevation="36dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -116,42 +117,47 @@
                 android:layout_alignParentBottom="true">
 
                 <TextView
+                    android:id="@+id/tvLabelImagePreview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:gravity="center_horizontal"
                     style="@style/TextLabel"
-                    android:text="Image Preview"/>
+                    android:text="@string/image_preview"/>
 
                 <ImageView
+                    android:id="@+id/imageViewPreviewUploadedImage"
                     android:layout_width="256dp"
                     android:layout_height="256dp"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/ic_undraw_photograph_re_up3b"/>
+                    android:src="@drawable/ic_undraw_photograph_re_up3b"
+                    android:contentDescription="@string/preview_of_uploaded_image" />
 
                 <Button
-                    android:id="@+id/buttonGetSegmentationResult"
+                    android:id="@+id/buttonGetResult"
                     android:background="@drawable/bg_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
-                    android:text="Get Result"/>
+                    android:text="@string/get_result"/>
 
                 <TextView
+                    android:id="@+id/tvLabelImageResult"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
                     android:textSize="18sp"
                     android:gravity="center_horizontal"
                     style="@style/TextLabel"
-                    android:text="Image Result"/>
+                    android:text="@string/image_result"/>
 
                 <ImageView
+                    android:id="@+id/imageViewResult"
                     android:layout_width="256dp"
                     android:layout_height="256dp"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/ic_undraw_analyze_17kw"/>
-
+                    android:src="@drawable/ic_undraw_analyze_17kw"
+                    android:contentDescription="@string/result_image" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -159,6 +165,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingButtonUploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:baselineAlignBottom="false"
@@ -169,6 +176,7 @@
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
         android:layout_marginEnd="30dp"
-        android:backgroundTint="@color/red"/>
+        android:backgroundTint="@color/red"
+        android:contentDescription="@string/upload_image" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
