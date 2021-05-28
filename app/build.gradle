@@ -26,6 +26,7 @@ android {
 
     buildFeatures{
         viewBinding true
+        mlModelBinding true
     }
 
     compileOptions {
@@ -48,6 +49,11 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // tensorflow lite
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
 
     // fragment
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
