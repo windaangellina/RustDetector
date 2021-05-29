@@ -11,4 +11,5 @@
     <string name="preview_of_uploaded_image">Preview of Uploaded Image</string>
     <string name="result_image">Result Image</string>
     <string name="banner_image">Banner Image</string>
+    <string name="download_result">Download Result</string>
 </resources>

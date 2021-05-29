@@ -3,21 +3,21 @@ package com.capstone.rustdetector.ui.home
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
-import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.capstone.rustdetector.FunctionUtil
 import com.capstone.rustdetector.R
 import com.capstone.rustdetector.databinding.ActivityMainBinding
 import com.capstone.rustdetector.ml.CorrsegmUnetmodel
 import com.google.android.material.appbar.AppBarLayout
+import org.checkerframework.checker.units.qual.g
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -26,7 +26,11 @@ import java.nio.ByteBuffer
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    // view binding
+    private var _binding : ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
+    // data
     private var bitmapSelectedPhoto : Bitmap? = null
 
     companion object{
@@ -73,8 +77,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(_binding?.root)
 
         setCollapseToolbarTitle()
         setComponentEvent()
@@ -113,7 +117,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getSegmentationResult(){
-        // FunctionUtil.makeToast(this@MainActivity, "get segmentation result")
+        bitmapSelectedPhoto = bitmapSelectedPhoto?.let {
+            Bitmap.createScaledBitmap(it, 256, 256, true)
+        }
 
         val model = CorrsegmUnetmodel.newInstance(applicationContext)
 
@@ -132,13 +138,29 @@ class MainActivity : AppCompatActivity() {
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
         // Shows result
-        val byteBufferOutput : ByteBuffer = outputFeature0.buffer
-        val imageBytes = ByteArray(byteBufferOutput.remaining())
-        byteBufferOutput[imageBytes]
-        val bitmapResult = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-        binding.imageViewResult.setImageBitmap(bitmapResult)
+        //val byteBufferOutput : ByteBuffer = outputFeature0.buffer
+//        val imageBytes = ByteArray(byteBufferOutput.remaining())
+//        byteBufferOutput[imageBytes]
+//        val bitmapResult = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+//        binding.imageViewResult.setImageBitmap(bitmapResult)
+
+        val floatArray: FloatArray = outputFeature0.floatArray
+        val outputBitmap : Bitmap = Bitmap.createBitmap(256, 256, Bitmap.Config.ARGB_8888)
+
+        for (i in 0 .. floatArray.size){
+            val imageSize = 256
+            outputBitmap.setPixel(
+                i - (i / imageSize) * imageSize ,
+                i / imageSize, Color.rgb(0, 0, 0))
+        }
+        binding.imageViewResult.setImageBitmap(outputBitmap)
 
         // Releases model resources if no longer used.
         model.close()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

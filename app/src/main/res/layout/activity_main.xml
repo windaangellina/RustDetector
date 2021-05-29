@@ -145,7 +145,7 @@
                     android:id="@+id/tvLabelImageResult"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="42dp"
                     android:textSize="18sp"
                     android:gravity="center_horizontal"
                     style="@style/TextLabel"
@@ -158,6 +158,16 @@
                     android:layout_marginTop="16dp"
                     android:src="@drawable/ic_undraw_analyze_17kw"
                     android:contentDescription="@string/result_image" />
+
+                <Button
+                    android:id="@+id/buttonDownloadResult"
+                    android:background="@drawable/bg_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="42dp"
+                    android:text="@string/download_result"/>
             </LinearLayout>
 
         </RelativeLayout>
