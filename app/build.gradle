@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
@@ -68,4 +69,12 @@ dependencies {
     // vector drawable
     implementation "androidx.vectordrawable:vectordrawable:1.1.0" // VectorDrawableCompat
     implementation "androidx.vectordrawable:vectordrawable-animated:1.1.0" // AnimatedVectorDrawableCompat
+
+    // firebase
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    // Add the dependency for the Firebase SDK for Google Analytics
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 }
