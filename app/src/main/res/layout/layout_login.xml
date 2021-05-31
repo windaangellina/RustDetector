@@ -31,7 +31,7 @@
                 style="@style/modifiedEditText"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:hint="@string/enter_username_or_email"/>
+                android:hint="@string/enter_email"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -46,15 +46,6 @@
                 android:maxLines="1"
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/textViewForgotPassword"
-            style="@style/viewParent"
-            android:text="@string/forgot_password"
-            android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/newsMoreTextSize"
-            android:layout_gravity="end"
-            android:layout_marginTop="10dp"/>
 
         <Button
             android:id="@+id/buttonLogin"
