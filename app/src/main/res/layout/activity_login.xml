@@ -34,14 +34,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:orientation="vertical"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp">
-
+                style="@style/layoutContainer">
                 <TextView
                     style="@style/headerText"
                     android:layout_gravity="center"
@@ -53,6 +46,14 @@
                     layout="@layout/layout_login"/>
 
             </LinearLayout>
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/icon_transparent" />
         </RelativeLayout>
 
     </ScrollView>

@@ -60,11 +60,25 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="fullParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <style name="loginButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_button</item>
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="layoutContainer" parent="fullParent">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">40dp</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:clipToPadding">false</item>
     </style>
 </resources>
