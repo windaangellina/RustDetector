@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.capstone.rustdetector.utils.FunctionUtil
 import com.capstone.rustdetector.databinding.ActivityRegisterBinding
 import com.capstone.rustdetector.viewmodel.RustDetectorViewModel
+import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RegisterActivity : AppCompatActivity() {
@@ -50,27 +51,62 @@ class RegisterActivity : AppCompatActivity() {
                     "Password and confirm password don't match")
             }
             else{
-                rustDetectorViewModel.saveUserToFirebase(email, password).observe(this, {
-                    val status = it[0]
-                    val message = it[1]
-
-//                    when(status){
-//                        "successful" -> {
+                saveToFirebase(email, password)
+//                rustDetectorViewModel.saveUserToFirebase(email, password).observe(this, {
+//                    val status = it[0]
+//                    val message = it[1]
 //
-//                        }
-//                        "failed" -> {
+////                    when(status){
+////                        "successful" -> {
+////
+////                        }
+////                        "failed" -> {
+////
+////                        }
+////                        "canceled" -> {
+////
+////                        }
+////                    }
 //
-//                        }
-//                        "canceled" -> {
-//
-//                        }
+//                    if (message != null) {
+//                        FunctionUtil.makeToast(applicationContext, message)
 //                    }
-
-                    if (message != null) {
-                        FunctionUtil.makeToast(applicationContext, message)
-                    }
-                })
+//                    else{
+//                        FunctionUtil.makeToast(applicationContext, "empty message")
+//                    }
+//                })
             }
+        }
+    }
+
+    private fun saveToFirebase(email : String, password : String){
+        var status : String? = null
+        var message : String? = null
+
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful){
+                    status = "successful"
+                    message = "Successfully created user with UUID ${it.result?.user?.uid}"
+                }
+                else{
+                    message = "Failed on complete to create user due to ${it.exception?.message}"
+                }
+            }
+            .addOnFailureListener{
+                status = "failed"
+                message = "Failed to create user due to ${it.message}"
+            }
+            .addOnCanceledListener {
+                status = "canceled"
+                message = "Creating new user has been cancelled"
+            }
+
+        if (message != null) {
+            FunctionUtil.makeToast(applicationContext, message!!)
+        }
+        else{
+            FunctionUtil.makeToast(applicationContext, "empty message")
         }
     }
 
