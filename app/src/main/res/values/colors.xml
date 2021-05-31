@@ -6,4 +6,10 @@
     <color name="red">#ff6584</color>
     <color name="black">#1E1E1E</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">@color/black</color>
+    <color name="secondaryTextColor">@color/red</color>
+    <color name="loginBkColor">#f0f0f0</color>
 </resources>

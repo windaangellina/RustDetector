@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.Window
 import com.capstone.rustdetector.ui.home.MainActivity
 import com.capstone.rustdetector.R
+import com.capstone.rustdetector.ui.auth.LoginActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         val handler = Handler(mainLooper)
         handler.postDelayed({
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            startActivity(Intent(applicationContext, LoginActivity::class.java))
             finish()
         }, 3000L) //3000 L = 3 detik
 
