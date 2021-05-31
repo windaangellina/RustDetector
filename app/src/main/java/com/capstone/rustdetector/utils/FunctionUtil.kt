@@ -1,4 +1,4 @@
-package com.capstone.rustdetector
+package com.capstone.rustdetector.utils
 
 import android.content.Context
 import android.widget.Toast

@@ -16,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.capstone.rustdetector.R
 import com.capstone.rustdetector.databinding.ActivityMainBinding
 import com.capstone.rustdetector.ml.CorrsegmUnetmodel
+import com.capstone.rustdetector.viewmodel.RustDetectorViewModel
 import com.google.android.material.appbar.AppBarLayout
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
@@ -30,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     // view binding
     private var _binding : ActivityMainBinding? = null
     private val binding get() = _binding!!
+
+    // view model
+    private val rustDetectorViewModel : RustDetectorViewModel by viewModel()
 
     // data
     private var bitmapSelectedPhoto : Bitmap? = null
