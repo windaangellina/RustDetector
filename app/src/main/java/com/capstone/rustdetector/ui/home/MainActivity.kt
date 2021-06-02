@@ -12,6 +12,8 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.capstone.rustdetector.R
 import com.capstone.rustdetector.databinding.ActivityMainBinding
 import com.capstone.rustdetector.ml.CorrsegmUnetmodel
@@ -85,6 +87,14 @@ class MainActivity : AppCompatActivity() {
 
         setCollapseToolbarTitle()
         setComponentEvent()
+
+        val url : String = "https://firebasestorage.googleapis.com/v0/b/rust-detector/o/images%2Fecc91fde-c39f-11eb-b019-0242ac1c0002.jpg?alt=media&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwMjUxYWIxYTJmYzFkMzllNDMwMWNhYjc1OTZkNDQ5ZDgwNDI1ZjYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcnVzdC1kZXRlY3RvciIsImF1ZCI6InJ1c3QtZGV0ZWN0b3IiLCJhdXRoX3RpbWUiOjE2MjI2Mzc2OTgsInVzZXJfaWQiOiJXTVpWaGNEMEowT1ZwcGlPZ1ltb0FUQ2Q2NWEyIiwic3ViIjoiV01aVmhjRDBKME9WcHBpT2dZbW9BVENkNjVhMiIsImlhdCI6MTYyMjYzNzY5OCwiZXhwIjoxNjIyNjQxMjk4LCJlbWFpbCI6ImJhbmdraXRjYXBzdG9uZUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYmFuZ2tpdGNhcHN0b25lQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.PEMNn-dPp6YhDhM2qkKNXnPj16EfpNbkXY8lZi2MapDjeB8-xZDRJG0idIJkG7CC85xOnitsM8zVNfZoi1efWJyNpAXnS0IqziWMvvgWGs6mr68Dw_QA1NhnDBnzecbqTJqfCR5BaJQfD7e9_TbtuxV6AnfaBD31xNGipX3OUI01MzxtHXMyf-WsV0dan8q7iwbKx2vz8kazCxgmhbcS33JOUIflTdsEDiD99GkJVawO-9wAmu1I51xjEX4rIQOxD8gTiTAbrz2RIhGYCHCJWPbeUVhxtWuL8QsGGmbwbAS6-rhIeq9MY8NGfK1zb2ceaPPbIxdTzIZmsS_8VGNCEw"
+
+        Glide.with(applicationContext)
+            .load(url)
+            .apply(RequestOptions().override(256, 256))
+            .centerCrop()
+            .into(binding.imageViewResult)
     }
 
     private fun setComponentEvent(){
