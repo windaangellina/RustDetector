@@ -99,24 +99,12 @@ class MainActivity : AppCompatActivity() {
             .apply(RequestOptions().override(256, 256))
             .centerCrop()
             .into(binding.imageViewResult)
-
-        binding.buttonDownloadResult.setOnClickListener {
-            val cw = ContextWrapper(applicationContext)
-            val directory: File = cw.getDir("imageDir", MODE_PRIVATE)
-            val file = File(directory, "UniqueFileName" + ".jpg")
-            if (!file.exists()) {
-                Log.d("path", file.toString())
-                var fos: FileOutputStream? = null
-                fos = FileOutputStream(file)
-                fos.flush()
-                fos.close()
-            }
-        }
     }
 
     private fun setComponentEvent(){
         binding.floatingButtonUploadImage.setOnClickListener { selectImage() }
         binding.buttonGetResult.setOnClickListener { getSegmentationResult() }
+        binding.buttonDownloadResult.setOnClickListener { download() }
     }
 
     private fun setCollapseToolbarTitle(){
@@ -187,6 +175,19 @@ class MainActivity : AppCompatActivity() {
 
         // Releases model resources if no longer used.
         model.close()
+    }
+
+    private fun download(){
+        val cw = ContextWrapper(applicationContext)
+        val directory: File = cw.getDir("imageDir", MODE_PRIVATE)
+        val file = File(directory, "UniqueFileName" + ".jpg")
+        if (!file.exists()) {
+            Log.d("path", file.toString())
+            var fos: FileOutputStream? = null
+            fos = FileOutputStream(file)
+            fos.flush()
+            fos.close()
+        }
     }
 
     override fun onDestroy() {
