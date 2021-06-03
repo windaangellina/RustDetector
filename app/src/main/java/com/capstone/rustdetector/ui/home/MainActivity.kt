@@ -1,6 +1,8 @@
 package com.capstone.rustdetector.ui.home
 
+import android.R.attr.bitmap
 import android.app.Activity
+import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -23,6 +25,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.ByteBuffer
 
@@ -95,6 +99,19 @@ class MainActivity : AppCompatActivity() {
             .apply(RequestOptions().override(256, 256))
             .centerCrop()
             .into(binding.imageViewResult)
+
+        binding.buttonDownloadResult.setOnClickListener {
+            val cw = ContextWrapper(applicationContext)
+            val directory: File = cw.getDir("imageDir", MODE_PRIVATE)
+            val file = File(directory, "UniqueFileName" + ".jpg")
+            if (!file.exists()) {
+                Log.d("path", file.toString())
+                var fos: FileOutputStream? = null
+                fos = FileOutputStream(file)
+                fos.flush()
+                fos.close()
+            }
+        }
     }
 
     private fun setComponentEvent(){
