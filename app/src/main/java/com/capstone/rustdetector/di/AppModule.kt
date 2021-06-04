@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 object AppModule {
     val viewModelModule = module {
-        viewModel { RustDetectorViewModel(rustDetectorRepository = get() ) }
+        viewModel { RustDetectorViewModel(repository = get() ) }
     }
 }
