@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconLauncherShape">
+        <ignore path="src/main/res/mipmap-hdpi/ic_logo.png" />
+        <ignore path="src/main/res/mipmap-mdpi/ic_logo.png" />
+        <ignore path="src/main/res/mipmap-xhdpi/ic_logo.png" />
+        <ignore path="src/main/res/mipmap-xxhdpi/ic_logo.png" />
+        <ignore path="src/main/res/mipmap-xxxhdpi/ic_logo.png" />
+    </issue>
+</lint>

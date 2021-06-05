@@ -6,12 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import com.capstone.rustdetector.source.remote.RemoteDataSource
 import com.capstone.rustdetector.source.remote.api.response.CorrosionSegmentationResponse
 import com.capstone.rustdetector.utils.Event
-import com.capstone.rustdetector.utils.FunctionUtil
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.ByteArrayOutputStream
-import java.util.*
-
 
 class RustDetectorRepository(private val remoteDataSource: RemoteDataSource) : RustDetectorDataSource{
     // status
@@ -24,7 +21,6 @@ class RustDetectorRepository(private val remoteDataSource: RemoteDataSource) : R
 
         // preparation to build RequestBody
         val builder: MultipartBody.Builder = MultipartBody.Builder().setType(MultipartBody.FORM)
-//        val fileName : String = UUID.randomUUID().toString() + "." + "jpg"
 
         // compress bitmap
         val bos = ByteArrayOutputStream()

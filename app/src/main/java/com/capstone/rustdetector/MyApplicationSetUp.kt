@@ -2,7 +2,6 @@ package com.capstone.rustdetector
 
 import android.app.Application
 import com.capstone.rustdetector.di.AppModule.viewModelModule
-import com.capstone.rustdetector.di.CoreModule
 import com.capstone.rustdetector.di.CoreModule.repositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

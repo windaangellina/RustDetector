@@ -28,7 +28,7 @@ object FunctionUtil {
         return mime.getExtensionFromMimeType(cR.getType(uri))
     }
 
-    fun getFilenameFromUri(uri: Uri?, context: Context) : String? {
+    fun getFilenameFromUri(uri: Uri?, context: Context) : String {
         // returns randomized unique filename with extension
         return UUID.randomUUID().toString() + "." + uri?.let { getExtensionFromUri(it, context) }
     }

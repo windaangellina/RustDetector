@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#253aa1</color>
     <color name="purple_700">#32327d</color>
     <color name="red">#ff6584</color>
     <color name="black">#1E1E1E</color>
     <color name="white">#FFFFFFFF</color>
 
     <!--colors for modern ui-->
-    <color name="whiteTextColor">#fff</color>
-    <color name="primaryTextColor">@color/black</color>
-    <color name="secondaryTextColor">@color/red</color>
-    <color name="loginBkColor">#f0f0f0</color>
 </resources>

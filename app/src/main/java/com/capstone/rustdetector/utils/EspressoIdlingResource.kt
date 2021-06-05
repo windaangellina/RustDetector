@@ -5,7 +5,7 @@ import android.support.test.espresso.idling.CountingIdlingResource
 class EspressoIdlingResource {
     companion object{
         private const val resource = "GLOBAL"
-        val espressoTestIdlingResource = CountingIdlingResource(resource)
+        private val espressoTestIdlingResource = CountingIdlingResource(resource)
 
         fun increment() {
             espressoTestIdlingResource.increment()
