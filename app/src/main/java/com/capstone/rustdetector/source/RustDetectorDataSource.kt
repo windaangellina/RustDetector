@@ -6,5 +6,6 @@ import com.capstone.rustdetector.source.remote.api.response.CorrosionSegmentatio
 import com.capstone.rustdetector.utils.Event
 
 interface RustDetectorDataSource {
-    fun getSegmentationResult(bitmap: Bitmap) : LiveData<Event<CorrosionSegmentationResponse?>>
+    fun getSegmentationResult(bitmap: Bitmap, fileName : String) :
+            LiveData<Event<CorrosionSegmentationResponse?>>
 }

@@ -4,6 +4,8 @@
     package="com.capstone.rustdetector">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".MyApplicationSetUp"
@@ -22,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.home.MainActivity" />
+        <activity android:name=".ui.home.MainActivity" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

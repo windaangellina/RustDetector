@@ -1,5 +1,6 @@
 package com.capstone.rustdetector.utils
 
+import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
@@ -8,19 +9,29 @@ import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
 import android.util.Log
+import android.webkit.MimeTypeMap
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.capstone.rustdetector.ui.home.MainActivity
 import java.io.IOException
-import kotlin.random.Random
+import java.util.*
+
 
 object FunctionUtil {
-    private val charPool : List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
-    private const val STRING_LENGTH = 36
-    private const val ALPHANUMERIC_REGEX = "[a-zA-Z0-9]+";
+    private const val TAG = "FunctionUtil"
+
+    private fun getExtensionFromUri(uri: Uri, context: Context): String? {
+        val cR: ContentResolver = context.contentResolver
+        val mime = MimeTypeMap.getSingleton()
+        return mime.getExtensionFromMimeType(cR.getType(uri))
+    }
+
+    fun getFilenameFromUri(uri: Uri?, context: Context) : String? {
+        // returns randomized unique filename with extension
+        return UUID.randomUUID().toString() + "." + uri?.let { getExtensionFromUri(it, context) }
+    }
 
     fun makeToast(context: Context, message : String){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
@@ -49,5 +60,27 @@ object FunctionUtil {
             })
     }
 
+    fun getBitmapFromUri(uri : Uri?, context: Context) : Bitmap?{
+        var bitmap: Bitmap? = null
+        try {
+            if(Build.VERSION.SDK_INT < 28) {
+                bitmap = MediaStore.Images.Media.getBitmap(
+                    context.contentResolver, uri
+                )
+            } else {
+                val source =
+                    uri?.let {
+                        ImageDecoder.createSource(context.contentResolver,
+                            it
+                        )
+                    }
+                bitmap = source?.let { ImageDecoder.decodeBitmap(it) }
+                bitmap = bitmap?.copy(Bitmap.Config.ARGB_8888, true)
+            }
+        }catch (e : IOException){
+            Log.e(TAG, "Upload and convert image failed : ${e.message}")
+        }
 
+        return bitmap
+    }
 }

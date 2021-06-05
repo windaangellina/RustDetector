@@ -11,7 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 class RustDetectorViewModel(private val repository: RustDetectorRepository) : ViewModel() {
     val loadingStatus : LiveData<Boolean> = repository.isLoading
 
-    fun getCorrosionSegmentationResult(bitmapSelectedPhoto: Bitmap) : LiveData<Event<CorrosionSegmentationResponse?>> {
-        return repository.getSegmentationResult(bitmap = bitmapSelectedPhoto)
+    fun getCorrosionSegmentationResult(bitmapSelectedPhoto: Bitmap, fileName : String) :
+            LiveData<Event<CorrosionSegmentationResponse?>> {
+        return repository.getSegmentationResult(bitmap = bitmapSelectedPhoto, fileName = fileName)
     }
 }
