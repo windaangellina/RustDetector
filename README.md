@@ -96,17 +96,22 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Android Studio](https://developer.android.com)
+* [Firebase](https://firebase.google.com)
+* [Google Cloud Platform](https://cloud.google.com)
+* [Kotlin Programming Language](https://kotlinlang.org)
+* [Flask Framework](https://flask.palletsprojects.com/)
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Corrosion is one of the most common causes of structural failure. Based on research and statistical data, 42% of structural failures were due to corrosion in all forms (general corrosion, pitting corrosion, corrosion in the gaps, stress corrosion cracking, corrosion fatigue, and so on) therefore knowing corrosion as early as possible is the best preventive measure to prevent structural failure.
+The conventional method to check for corrosion is by bare and unaided eyes which unfortunately is a time-consuming and ineffective process. This is especially true when the situation requires us to check locations that are difficult to reach such as holes and tanks in ships or a high bridge. The cost for hiring manpowers to do this makes this method all the more
+painful to do. The alternative is by using vendor service which is considerably expensive, averaging on $400 per basic test.
+This is our background of why we want to create a corrosion detection system. Our big dream is to apply this model to the drone so corrosion detection in difficult areas is much easier but for now, we will apply it to the android app first.
+
 
 ### Prerequisites
 
@@ -173,7 +178,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Aubert Oktaviantono - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Hendra Lingga Wijaya - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Leny Arinda - [@your_twitter](https://twitter.com/your_username) - email@example.com
+M Rifqi Azkiya J - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Rudi Haryanto - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Winda Angelina Utama - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
