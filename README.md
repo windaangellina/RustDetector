@@ -27,7 +27,7 @@
 
   <h3 align="center">Rust Detector</h3>
 
-  <p align="center">
+<!--   <p align="center">
     An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/windaangellina/RustDetector"><strong>Explore the docs »</strong></a>
@@ -38,7 +38,7 @@
     <a href="https://github.com/windaangellina/RustDetector/issues">Report Bug</a>
     ·
     <a href="https://github.com/windaangellina/RustDetector/issues">Request Feature</a>
-  </p>
+  </p> -->
 </p>
 
 
@@ -63,7 +63,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+<!--     <li><a href="#license">License</a></li> -->
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -74,18 +74,18 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<table>
-        <tr>
-            <td><strong>     Splash Screen          </strong></td>
-            <td><strong>  Top Layout     </strong></td>
-          <td> <strong>      Bottom Layout</strong> </td>
-        </tr>
-        <tr>
-            <td><img src="images/splashscreen.png" alt="Logo" width="240" height="546.5"></td>
-            <td><img src="images/top_layout.png" alt="Logo" width="240" height="546.5"></td>
-          <td><img src="images/bottom_layout.jpg" alt="Logo" width="240" height="546.5"></td>
-        </tr>
-    </table>
+<table style="margin-left: auto;margin-right: auto;width:80%">
+    <tr>
+        <td><strong>     Splash Screen          </strong></td>
+        <td><strong>  Top Layout     </strong></td>
+      <td> <strong>      Bottom Layout</strong> </td>
+    </tr>
+    <tr>
+        <td><img src="images/splashscreen.png" alt="Logo" width="240" height="546.5"></td>
+        <td><img src="images/top_layout.png" alt="Logo" width="240" height="546.5"></td>
+      <td><img src="images/bottom_layout.jpg" alt="Logo" width="240" height="546.5"></td>
+    </tr>
+</table>
     
 Corrosion is one of the most common causes of structural failure. Based on research and statistical data, 42% of structural failures were due to corrosion in all forms (general corrosion, pitting corrosion, corrosion in the gaps, stress corrosion cracking, corrosion fatigue, and so on) therefore knowing corrosion as early as possible is the best preventive measure to prevent structural failure.
 
@@ -145,9 +145,9 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 
 <!-- LICENSE -->
-## License
+<!-- ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` for more information. -->
 
 
 
@@ -167,19 +167,7 @@ Project Link: [https://github.com/windaangellina/RustDetector](https://github.co
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
+* [Undraw Free Vectors](https://undraw.co/illustrations)
 
 
 
