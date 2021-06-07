@@ -22,7 +22,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo_cropped.png" alt="Logo" width="200" height="200">
+    <img src="images/icon.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Rust Detector</h3>
@@ -30,14 +30,14 @@
   <p align="center">
     An awesome README template to jumpstart your projects!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/windaangellina/RustDetector"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://youtube.com">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/windaangellina/RustDetector/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/windaangellina/RustDetector/issues">Request Feature</a>
   </p>
 </p>
 
@@ -82,6 +82,7 @@ The conventional method to check for corrosion is by bare and unaided eyes which
 
 This is our background of why we want to create a corrosion detection system. Our big dream is to apply this model to the drone so corrosion detection in difficult areas is much easier but for now, we will apply it to the android app first.
 
+
 ### Built With
 
 * [Android Studio](https://developer.android.com)
@@ -92,12 +93,6 @@ This is our background of why we want to create a corrosion detection system. Ou
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-
-
-
 ### Prerequisites
 
 1. Android 5.0
@@ -105,8 +100,8 @@ This is our background of why we want to create a corrosion detection system. Ou
 
 ### Installation
 
-1. Download [The APK](https://drive.google.com)
-2. Install The APK to your device
+1. Download the APK [here](https://drive.google.com)
+2. Install the APK to your device
 
 
 
@@ -123,23 +118,18 @@ You can follow this [demo](https://youtube.com)
 
 
 
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+In general, we follow the "fork-and-pull" Git workflow.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the repo on GitHub
+2. Clone the project to your own machine
+3. Commit changes to your own branch
+4. Push your work back up to your fork
+5. Submit a Pull request so that we can review your changes
+
+NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 
 
@@ -153,14 +143,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Aubert Oktaviantono - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
-Hendra Lingga Wijaya - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
-Leny Arinda - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
-M Rifqi Azkiya J - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
-Rudi Haryanto - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
-Winda Angelina Utama - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
+Aubert Oktaviantono - [LinkedIn](https://www.linkedin.com/in/auboktav/)  <br>
+Hendra Lingga Wijaya - [LinkedIn](https://www.linkedin.com/in/hendra-lingga-wijaya-955b80207/)  <br>
+Leny Arinda - [LinkedIn](https://www.linkedin.com/in/lenyarinda/)  <br>
+M Rifqi Azkiya J - [LinkedIn](https://www.linkedin.com/in/mrazkiya/)  <br>
+Rudi Haryanto - [LinkedIn](http://www.linkedin.com/in/rudiharyanto/) <br>
+Winda Angelina Utama - [LinkedIn](https://www.linkedin.com/in/winda-angelina-utama/)  <br>
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/windaangellina/RustDetector](https://github.com/windaangellina/RustDetector)
 
 
 
