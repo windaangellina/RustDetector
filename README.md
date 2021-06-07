@@ -82,16 +82,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Corrosion is one of the most common causes of structural failure. Based on research and statistical data, 42% of structural failures were due to corrosion in all forms (general corrosion, pitting corrosion, corrosion in the gaps, stress corrosion cracking, corrosion fatigue, and so on) therefore knowing corrosion as early as possible is the best preventive measure to prevent structural failure.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+The conventional method to check for corrosion is by bare and unaided eyes which unfortunately is a time-consuming and ineffective process. This is especially true when the situation requires us to check locations that are difficult to reach such as holes and tanks in ships or a high bridge. The cost for hiring manpowers to do this makes this method all the more painful to do. The alternative is by using vendor service which is considerably expensive, averaging on $400 per basic test.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+This is our background of why we want to create a corrosion detection system. Our big dream is to apply this model to the drone so corrosion detection in difficult areas is much easier but for now, we will apply it to the android app first.
 
 ### Built With
 
@@ -107,10 +102,7 @@ This section should list any major frameworks that you built your project using.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Corrosion is one of the most common causes of structural failure. Based on research and statistical data, 42% of structural failures were due to corrosion in all forms (general corrosion, pitting corrosion, corrosion in the gaps, stress corrosion cracking, corrosion fatigue, and so on) therefore knowing corrosion as early as possible is the best preventive measure to prevent structural failure.
-The conventional method to check for corrosion is by bare and unaided eyes which unfortunately is a time-consuming and ineffective process. This is especially true when the situation requires us to check locations that are difficult to reach such as holes and tanks in ships or a high bridge. The cost for hiring manpowers to do this makes this method all the more
-painful to do. The alternative is by using vendor service which is considerably expensive, averaging on $400 per basic test.
-This is our background of why we want to create a corrosion detection system. Our big dream is to apply this model to the drone so corrosion detection in difficult areas is much easier but for now, we will apply it to the android app first.
+
 
 
 ### Prerequisites
