@@ -118,7 +118,7 @@ This is our background of why we want to create a corrosion detection system. Ou
 
 ### Prerequisites
 
-1. Android 5.0
+1. Android 5.0 Lollipop (minimum API level 21)
 2. Internet Connection
 
 ### Installation
