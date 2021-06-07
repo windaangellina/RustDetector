@@ -77,22 +77,16 @@
 <table>
         <tr>
             <td><strong>     Splash Screen          </strong></td>
-            <td><img src="images/splashscreen.png" alt="Logo" width="240" height="546.5">&nbsp; &nbsp</td>
+            <td><strong>  Top Layout     </strong></td>
+          <td> <strong>      Bottom Layout</strong> </td>
         </tr>
         <tr>
-            <td>Baris 2 kolom 1</td>
-            <td>baris 2 kolom 2</td>
-        </tr>
-        <tr>
-            <td>Baris 2 kolom 1</td>
-            <td>baris 2 kolom 2</td>
+            <td><img src="images/splashscreen.png" alt="Logo" width="240" height="546.5"></td>
+            <td><img src="images/top_layout.png" alt="Logo" width="240" height="546.5"></td>
+          <td><img src="images/bottom_layout.jpg" alt="Logo" width="240" height="546.5"></td>
         </tr>
     </table>
     
-      <strong>  Top Layout     </strong>      <strong>      Bottom Layout</strong></pre>
-
-;<img src="images/top_layout.png" alt="Logo" width="240" height="546.5">&nbsp; &nbsp;<img src="images/bottom_layout.jpg" alt="Logo" width="240" height="546.5">
-
 Corrosion is one of the most common causes of structural failure. Based on research and statistical data, 42% of structural failures were due to corrosion in all forms (general corrosion, pitting corrosion, corrosion in the gaps, stress corrosion cracking, corrosion fatigue, and so on) therefore knowing corrosion as early as possible is the best preventive measure to prevent structural failure.
 
 The conventional method to check for corrosion is by bare and unaided eyes which unfortunately is a time-consuming and ineffective process. This is especially true when the situation requires us to check locations that are difficult to reach such as holes and tanks in ships or a high bridge. The cost for hiring manpowers to do this makes this method all the more painful to do. The alternative is by using vendor service which is considerably expensive, averaging on $400 per basic test.
