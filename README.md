@@ -73,6 +73,18 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+<table>
+        <tr>
+            <td>Baris 1 kolom 1</td>
+            <td>baris 1 kolom 2</td>
+        </tr>
+        <tr>
+            <td>Baris 2 kolom 1</td>
+            <td>baris 2 kolom 2</td>
+        </tr>
+    </table>
+    
 <strong>     Splash Screen          </strong>      <strong>  Top Layout     </strong>      <strong>      Bottom Layout</strong></pre>
 
 <img src="images/splashscreen.png" alt="Logo" width="240" height="546.5">&nbsp; &nbsp;<img src="images/top_layout.png" alt="Logo" width="240" height="546.5">&nbsp; &nbsp;<img src="images/bottom_layout.jpg" alt="Logo" width="240" height="546.5">
