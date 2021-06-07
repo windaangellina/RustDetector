@@ -22,7 +22,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo_cropped.png" alt="Logo" width="100" height="100">
+    <img src="images/logo_cropped.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Rust Detector</h3>
