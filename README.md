@@ -178,12 +178,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Aubert Oktaviantono - [@your_twitter](https://twitter.com/your_username) - email@example.com
-Hendra Lingga Wijaya - [@your_twitter](https://twitter.com/your_username) - email@example.com
-Leny Arinda - [@your_twitter](https://twitter.com/your_username) - email@example.com
-M Rifqi Azkiya J - [@your_twitter](https://twitter.com/your_username) - email@example.com
-Rudi Haryanto - [@your_twitter](https://twitter.com/your_username) - email@example.com
-Winda Angelina Utama - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Aubert Oktaviantono - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
+Hendra Lingga Wijaya - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
+Leny Arinda - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
+M Rifqi Azkiya J - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
+Rudi Haryanto - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
+Winda Angelina Utama - [@your_twitter](https://twitter.com/your_username) - email@example.com <br>
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
