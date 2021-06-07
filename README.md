@@ -80,7 +80,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/windaangellina/RustDetector/blob/main/images/logo.png)
 
 Corrosion is one of the most common causes of structural failure. Based on research and statistical data, 42% of structural failures were due to corrosion in all forms (general corrosion, pitting corrosion, corrosion in the gaps, stress corrosion cracking, corrosion fatigue, and so on) therefore knowing corrosion as early as possible is the best preventive measure to prevent structural failure.
 
