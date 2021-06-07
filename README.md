@@ -90,7 +90,6 @@ This is our background of why we want to create a corrosion detection system. Ou
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Android Studio](https://developer.android.com)
 * [Firebase](https://firebase.google.com)
 * [Google Cloud Platform](https://cloud.google.com)
@@ -107,36 +106,26 @@ This section should list any major frameworks that you built your project using.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1. Android 5.0
+2. Internet Connection
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Download [The APK](https://drive.google.com)
+2. Install The APK to your device
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+How To Use This App
+1. Open the apps
+2. Upload photos
+3. Wait the apps detect the rust
+4. Download the result if you want
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+You can follow this [demo](https://youtube.com)
 
 
 
