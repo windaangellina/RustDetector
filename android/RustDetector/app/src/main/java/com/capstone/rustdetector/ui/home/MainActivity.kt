@@ -5,11 +5,11 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -173,7 +173,6 @@ class MainActivity : AppCompatActivity() {
                         if (it != null){
                             val imageUrl = it.url
                             FunctionUtil.makeToast(applicationContext, imageUrl)
-//                            url = imageUrl
                             Glide.with(applicationContext)
                                 .asBitmap()
                                 .load(imageUrl)
@@ -214,46 +213,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun download(){
-//        val cw = ContextWrapper(applicationContext)
-//        val directory: File = cw.getDir("imageDir", AppCompatActivity.MODE_PRIVATE)
-//        val file = File(directory, selectedFileName)
-//        if (!file.exists()) {
-//            Log.d("path", file.toString())
-//            var fos: FileOutputStream? = null
-//            fos = FileOutputStream(file)
-//            fos.flush()
-//            fos.close()
-//        }
-
-        //val bitmap = binding.layoutPrediction.imageViewResult.drawable.toBitmap()
-//        val bitmap = Glide.with(this).asBitmap().load(url)
-        /*
-        val bitmap = resultBitmap
-
-
-        try {
-            var outputStream: FileOutputStream? = null
-            val file = Environment.getExternalStorageDirectory()
-            val dir = File(Environment.DIRECTORY_DCIM)
-            if (!dir.exists()){
-                dir.mkdirs()
-            }
-
-            val filename = String.format("%d.png", System.currentTimeMillis())
-            val outFile = File(dir, filename)
-
-            outputStream = FileOutputStream(outFile)
-            bitmap?.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-            outputStream.flush()
-            outputStream.close()
-            FunctionUtil.makeToast(applicationContext, "file saved in DCIM")
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Log.e("MainActivity", "download image failed : ${e.message}")
-        }
-
-         */
         if (ContextCompat.checkSelfPermission(
                 this@MainActivity,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -293,29 +252,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveImage() {
-        val dir = File(Environment.getExternalStorageDirectory(), "SaveImage")
+        val dir : File = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
         if (!dir.exists()) {
             dir.mkdir()
         }
-        val drawable = binding.layoutPrediction.imageViewResult.getDrawable() as BitmapDrawable
-        val bitmap = drawable.bitmap
-        val file = File(dir, System.currentTimeMillis().toString() + ".jpg")
+
+        val bitmap = resultBitmap
+        val file = File(dir, selectedFileName!!)
         try {
             outputStream = FileOutputStream(file)
         } catch (e: FileNotFoundException) {
-            e.printStackTrace()
+            Log.e("MainActivity", "save image failed : ${e.message}")
         }
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-        Toast.makeText(this@MainActivity, "Successfuly Saved", Toast.LENGTH_SHORT).show()
+        bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+        if (bitmap == null){
+            FunctionUtil.makeToast(applicationContext, "null result bitmap")
+        }
+        Toast.makeText(this@MainActivity, "Successfully saved", Toast.LENGTH_SHORT).show()
+
         try {
             outputStream!!.flush()
         } catch (e: IOException) {
             e.printStackTrace()
+            Log.e("MainActivity", "save image failed : ${e.message}")
         }
         try {
             outputStream!!.close()
         } catch (e: IOException) {
             e.printStackTrace()
+            Log.e("MainActivity", "save image failed : ${e.message}")
         }
     }
 
