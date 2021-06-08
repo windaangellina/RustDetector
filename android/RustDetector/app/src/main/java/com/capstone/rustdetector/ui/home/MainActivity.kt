@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-        FunctionUtil.makeToast(applicationContext, "Successfully saved to ${file.absolutePath}")
+        FunctionUtil.makeToast(applicationContext, "Successfully saved to Pictures")
 
         try {
             outputStream!!.flush()
