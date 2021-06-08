@@ -123,7 +123,7 @@ This is our background of why we want to create a corrosion detection system. Ou
 
 ### Installation
 
-1. Download the APK [here](https://drive.google.com)
+1. Download the APK [here](http://bit.ly/RustDetectorAPK)
 2. Install the APK to your device
 
 
