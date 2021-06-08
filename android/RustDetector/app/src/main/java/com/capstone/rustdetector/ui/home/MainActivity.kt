@@ -1,18 +1,21 @@
 package com.capstone.rustdetector.ui.home
 
+import android.Manifest
 import android.app.Activity
-import android.content.ContextWrapper
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
@@ -23,13 +26,7 @@ import com.capstone.rustdetector.utils.NetworkLiveData
 import com.capstone.rustdetector.viewmodel.RustDetectorViewModel
 import com.google.android.material.appbar.AppBarLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.MalformedURLException
-import java.net.URL
+import java.io.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,8 +40,11 @@ class MainActivity : AppCompatActivity() {
     // data
     private var selectedFileBitmap : Bitmap? = null
     private var selectedFileName : String? = null
-//    private var url : String? = null
     private var resultBitmap : Bitmap? = null
+
+    //download
+    private var REQUEST_CODE: Int = 100
+    var outputStream: OutputStream? = null
 
     // replacement for deprecated onActivityResult
     private val resultLauncher = this.registerForActivityResult(
@@ -227,6 +227,7 @@ class MainActivity : AppCompatActivity() {
 
         //val bitmap = binding.layoutPrediction.imageViewResult.drawable.toBitmap()
 //        val bitmap = Glide.with(this).asBitmap().load(url)
+        /*
         val bitmap = resultBitmap
 
 
@@ -250,6 +251,71 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
             Log.e("MainActivity", "download image failed : ${e.message}")
+        }
+
+         */
+        if (ContextCompat.checkSelfPermission(
+                this@MainActivity,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            saveImage()
+        } else {
+            askPermission()
+        }
+    }
+
+    private fun askPermission() {
+        ActivityCompat.requestPermissions(
+            this@MainActivity,
+            arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            REQUEST_CODE
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String?>,
+        grantResults: IntArray
+    ) {
+        if (requestCode == REQUEST_CODE) {
+            if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                saveImage()
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    "Please provide the required permissions",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    private fun saveImage() {
+        val dir = File(Environment.getExternalStorageDirectory(), "SaveImage")
+        if (!dir.exists()) {
+            dir.mkdir()
+        }
+        val drawable = binding.layoutPrediction.imageViewResult.getDrawable() as BitmapDrawable
+        val bitmap = drawable.bitmap
+        val file = File(dir, System.currentTimeMillis().toString() + ".jpg")
+        try {
+            outputStream = FileOutputStream(file)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+        Toast.makeText(this@MainActivity, "Successfuly Saved", Toast.LENGTH_SHORT).show()
+        try {
+            outputStream!!.flush()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        try {
+            outputStream!!.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 
