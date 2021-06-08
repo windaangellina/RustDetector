@@ -27,18 +27,18 @@
 
   <h3 align="center">Rust Detector</h3>
 
-<!--   <p align="center">
-    An awesome README template to jumpstart your projects!
+  <p align="center">
+    Making rust detection easy since 2021! [ Bangkit Capstone Project ]
     <br />
     <a href="https://github.com/windaangellina/RustDetector"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://youtube.com">View Demo</a>
+    <a href="https://youtu.be/ERyjl43uAzk">View Demo</a>
     ·
     <a href="https://github.com/windaangellina/RustDetector/issues">Report Bug</a>
     ·
     <a href="https://github.com/windaangellina/RustDetector/issues">Request Feature</a>
-  </p> -->
+  </p>
 </p>
 
 
