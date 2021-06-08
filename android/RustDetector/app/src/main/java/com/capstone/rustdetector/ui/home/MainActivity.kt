@@ -1,13 +1,12 @@
 package com.capstone.rustdetector.ui.home
 
 import android.app.Activity
-import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +20,11 @@ import com.capstone.rustdetector.utils.NetworkLiveData
 import com.capstone.rustdetector.viewmodel.RustDetectorViewModel
 import com.google.android.material.appbar.AppBarLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.io.File
-import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.MalformedURLException
+import java.net.URL
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     // data
     private var selectedFileBitmap : Bitmap? = null
     private var selectedFileName : String? = null
+    private var url : String? = null
 
     // replacement for deprecated onActivityResult
     private val resultLauncher = this.registerForActivityResult(
@@ -170,6 +173,7 @@ class MainActivity : AppCompatActivity() {
 //                            )
 
                             FunctionUtil.makeToast(applicationContext, imageUrl)
+                            url = imageUrl
                             Glide.with(applicationContext)
                                 .asBitmap()
                                 .load(imageUrl)
@@ -209,6 +213,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun download(){
+        /*
         val cw = ContextWrapper(applicationContext)
         val directory: File = cw.getDir("imageDir", AppCompatActivity.MODE_PRIVATE)
         val file = File(directory, selectedFileName)
@@ -219,6 +224,34 @@ class MainActivity : AppCompatActivity() {
             fos.flush()
             fos.close()
         }
+
+        //val bitmap = binding.layoutPrediction.imageViewResult.drawable.toBitmap()
+        val bitmap = Glide.with(this).asBitmap().load(url)
+
+        var outputStream: FileOutputStream? = null
+        val file = Environment.getExternalStorageDirectory()
+        val dir = File(file.absolutePath + "/MyPics")
+        dir.mkdirs()
+
+        val filename = String.format("%d.png", System.currentTimeMillis())
+        val outFile = File(dir, filename)
+        try {
+            outputStream = FileOutputStream(outFile)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+        try {
+            outputStream!!.flush()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        try {
+            outputStream!!.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+         */
     }
 
     override fun onDestroy() {
