@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.capstone.rustdetector.R
@@ -30,6 +32,9 @@ import java.io.*
 
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        private const val REQUEST_CODE: Int = 100
+    }
     // view binding
     private var _binding : ActivityMainBinding? = null
     private val binding get() = _binding!!
@@ -43,8 +48,7 @@ class MainActivity : AppCompatActivity() {
     private var resultBitmap : Bitmap? = null
 
     //download
-    private var REQUEST_CODE: Int = 100
-    var outputStream: OutputStream? = null
+    private var outputStream: OutputStream? = null
 
     // replacement for deprecated onActivityResult
     private val resultLauncher = this.registerForActivityResult(
@@ -168,18 +172,17 @@ class MainActivity : AppCompatActivity() {
         selectedFileBitmap?.let { bitmap ->
             selectedFileName?.let { fileName ->
                 rustDetectorViewModel.getCorrosionSegmentationResult(bitmap, fileName).observe(this,
-                    { event ->
-                    event.getContentIfNotHandled().let {
+                    { event -> event.getContentIfNotHandled().let {
                         if (it != null){
                             val imageUrl = it.url
-                            FunctionUtil.makeToast(applicationContext, imageUrl)
                             Glide.with(applicationContext)
                                 .asBitmap()
                                 .load(imageUrl)
+                                .dontAnimate()
                                 .into(object : CustomTarget<Bitmap>(){
                                     override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                                        resultBitmap = resource
                                         binding.layoutPrediction.imageViewResult.setImageBitmap(resource)
+                                        resultBitmap = resource
                                     }
                                     override fun onLoadCleared(placeholder: Drawable?) {
                                         // this is called when imageView is cleared on lifecycle call or for
@@ -227,7 +230,9 @@ class MainActivity : AppCompatActivity() {
     private fun askPermission() {
         ActivityCompat.requestPermissions(
             this@MainActivity,
-            arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            arrayOf(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ),
             REQUEST_CODE
         )
     }
@@ -264,11 +269,9 @@ class MainActivity : AppCompatActivity() {
         } catch (e: FileNotFoundException) {
             Log.e("MainActivity", "save image failed : ${e.message}")
         }
+
         bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-        if (bitmap == null){
-            FunctionUtil.makeToast(applicationContext, "null result bitmap")
-        }
-        Toast.makeText(this@MainActivity, "Successfully saved", Toast.LENGTH_SHORT).show()
+        FunctionUtil.makeToast(applicationContext, "Successfully saved to ${file.absolutePath}")
 
         try {
             outputStream!!.flush()
@@ -281,6 +284,18 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
             Log.e("MainActivity", "save image failed : ${e.message}")
+        }
+
+        scanFile(file.absolutePath)
+    }
+
+    private fun scanFile(pathLocation : String) {
+        MediaScannerConnection.scanFile(
+            applicationContext, arrayOf(pathLocation), null
+        ) { path, uri ->
+            Log.d(
+                "MainActivity", "Scan finished. You can view the image in the gallery now."
+            )
         }
     }
 
