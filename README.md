@@ -112,7 +112,9 @@ This is our background of why we want to create a corrosion detection system. Ou
 * [Firebase](https://firebase.google.com)
 * [Google Cloud Platform](https://cloud.google.com)
 * [Kotlin Programming Language](https://kotlinlang.org)
+* [Python Programming Language](https://www.python.org/)
 * [Flask Framework](https://flask.palletsprojects.com/)
+* [Nginx](https://www.nginx.com/)
 
 
 
